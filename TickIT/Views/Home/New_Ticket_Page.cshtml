@@ -5,3 +5,25 @@
 
 <h2>New_Ticket_Page</h2>
 
+<form action="" method="get">
+    <p>Subject: <input type="text" name="subject" value=""></p>
+    <p>Select a category:<p>
+        <input type="Radio" name="category" value="Hardware"> Hardware (Laptop, Desktop,server, Screen...) <br>
+        <input type="Radio" name="category" value="Software"> Software (Browsers, Office Software, Databases, Installation...)<br>
+
+
+    <p>
+        Description: <textarea class="class-for-nic-transfomation" name="xml_memo_13" id="xml_memo_13" style="width: 400px; height: 200px;">
+	 </textarea><input type="hidden" id="ActionDescriptionRichText" value=""></input>
+    </p>
+
+    <p>
+        Priority: <select name="Priority" size="1">
+            <option value="low" selected="selected">Low</option>
+            <option value="medium">Medium</option>
+            <option value="high">High</option>
+        </select>
+    </p>
+    <input type="submit" value="Submit">
+</form>
+

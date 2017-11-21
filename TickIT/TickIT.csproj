@@ -208,6 +208,10 @@
     <Content Include="App_Data\aspnet-TickIT-20171111030755_log.ldf">
       <DependentUpon>aspnet-TickIT-20171111030755.mdf</DependentUpon>
     </Content>
+    <Content Include="App_Data\Tick-ITdb.mdf" />
+    <Content Include="App_Data\Tick-ITdb_log.ldf">
+      <DependentUpon>Tick-ITdb.mdf</DependentUpon>
+    </Content>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />

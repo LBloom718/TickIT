@@ -1,31 +1,353 @@
-﻿@{
-    ViewBag.Title = "Home Page";
+﻿@*@{
+        ViewBag.Title = "Home Page";
+    }
+
+    <div class="jumbotron">
+        <h1>ASP.NET </h1>
+        <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
+        <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h2>Getting started</h2>
+            <p>
+                ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
+                enables a clean separation of concerns and gives you full control over markup
+                for enjoyable, agile development.
+            </p>
+            <p><a class="btn btn-default" href="Main_Page.cshtml">Learn more &raquo;</a></p>
+        </div>
+        <div class="col-md-4">
+            <h2>Get more libraries</h2>
+            <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
+            <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+        </div>
+        <div class="col-md-4">
+            <h2>Web Hosting</h2>
+            <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
+            <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+        </div>
+    </div>*@
+
+@{
+    ViewBag.Title = "Main_Page";
 }
 
-<div class="jumbotron">
-    <h1>ASP.NET </h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
+<!DOCTYPE html>
+<html xmlns=http://www.w3.org/1999/xhtml>
+<head runat="server">
+    <meta charset="UTF-8">
+    <title>Main Page</title>
+    <meta name="description" content="My template">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="Main_Page.cshtml">Learn more &raquo;</a></p>
+    <style>
+
+#boxheads{
+font-size: 30px;
+background: rgb(85,85,255);
+border: 0px;
+}
+
+
+
+/*______________Experimental Table Designs_____________________*/
+
+#spacedTable{
+width: 100%;
+border-spacing: 30px 0;
+
+}
+/* Zebra striping */
+tr:nth-of-type(odd) {
+  background: #eee;
+
+}
+tr:hover{
+background-color:grey;
+color:white;
+cursor:pointer;
+}
+th {
+  background: #333;
+  color: white;
+  font-weight: bold;
+}
+td {
+  padding: 6px;
+  border: 1px solid #ccc;
+  text-align: left;
+}
+th {
+  padding: 6px;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+button:hover{
+color:white;
+cursor:pointer;
+}
+
+/* -------------------THE MODAL (background) ----------------*/
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* -----------------MODAL CONTENT-------------------------- */
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+/*---------------------- ADDING ANIMATION--------------------*/
+line 123:
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+/* -------------------The Modal Close Button -----------------------*/
+.close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-header {
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: white;
+}
+
+.modal-body {padding: 2px 16px;}
+@media
+.modal-footer {
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: white;
+}
+
+
+/*_________ Adaptions to Table for differing screen size _________________*/
+
+only screen and (max-width: 760px),
+(min-device-width: 768px) and (max-device-width: 1024px)  {
+
+	/* Force table to not be like tables anymore */
+	table, thead, tbody, th, td, tr {
+		display: block;
+	}
+
+	/* Hide table headers (but not display: none;, for accessibility) */
+	thead tr {
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+
+	tr { border: 1px solid #ccc; }
+
+	td {
+		/* Behave  like a "row" */
+		border: none;
+		border-bottom: 1px solid #eee;
+		position: relative;
+		padding-left: 50%;
+	}
+
+	td:before {
+		/* Now like a table header */
+		position: absolute;
+		/* Top/left values mimic padding */
+		top: 6px;
+		left: 6px;
+		width: 45%;
+		padding-right: 10px;
+		white-space: nowrap;
+	}
+
+
+}
+
+    </style>
+
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function(){
+      $('table tbody tr').click(function(){
+         alert($(this).text());
+
+         });
+      });
+    </script>
+
+
+</head>
+<!--__________________________________MAIN PAGE_________________________-->
+<body class="">
+    <header>(Add Logo Here)</header>
+    <button id="myBtn" style="background-color:green; hover: rgb(102, 255, 102); float:right; font-size: 40px">+</button>
+    <div style="background-color:rgb(85,85,255);color:white;padding:150px;">
+        <!--_____________________  LARGE NUMBER BOXES  _________________________ -->
+        <table id="spacedTable">
+
+            <tr>
+                <th id="boxheads">New</th>
+                <th id="boxheads">In-Progress</th>
+                <th id="boxheads">Closed</th>
+            </tr>
+            <tr>
+
+                <td class="user" style="text-align: center; font-size:80px;background-color: white; border-radius: 15px;
+    border: 2px solid #73AD21;
+    padding: 15px;
+    width: 200px;
+    height: 150px;">
+                    <a href="url">4</a>
+                </td>
+                <td class=" " user" style="text-align: center; font-size:80px;background-color: white; border-radius: 15px;
+    border: 2px solid #73AD21;
+    padding: 15px;
+    width: 200px;
+    height: 150px;">
+                    <a href="url">10</a>
+                </td>
+                <td class="user" style="text-align: center; font-size:80px; background-color: white; border-radius: 15px;
+    border: 2px solid #73AD21;
+    padding: 15px;
+    width: 200px;
+    height: 150px;">
+                    <a href="url">15</a>
+                </td>
+                <!--__________________________________Users Above / Admin Below___________________________________________-->
+                <td class="admin" style="text-align: center; font-size:80px;background-color: white; border-radius: 15px;
+    border: 2px solid #73AD21;
+    padding: 15px;
+    width: 200px;
+    height: 150px;">
+                    <a href="url">4</a>
+                </td>
+                <td class="admin" style="text-align: center; font-size:80px;background-color: white; border-radius: 15px;
+    border: 2px solid #73AD21;
+    padding: 15px;
+    width: 200px;
+    height: 150px;">
+                    <a href="url">10</a>
+                </td>
+                <td class="admin" style="text-align: center; font-size:80px; background-color: white; border-radius: 15px;
+    border: 2px solid #73AD21;
+    padding: 15px;
+    width: 200px;
+    height: 150px;">
+                    <a href="url">15</a>
+                </td>
+            </tr>
     </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+    </table>
     </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+
+
+    <br>
+
+
+    <!--_________________________  HTML Table w/ JavaScript/JQuery Growing Ticket-Listing Table _______________________-->
+    <div style="overflow-x:auto;">
+        <table align="center" width="100%" border="2">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Discription</th>
+                    <th>Date</th>
+                    <th>Priority</th>
+                </tr>
+            </thead>
+
+
+            <tbody>
+                <tr>
+                    <td align="center"> 1 </td>
+                    <td align="center"> test </td>
+                    <td align="center"> test </td>
+                    <td align="center"> test </td>
+                </tr>
+                <tr>
+                    <td align="center"> 2 </td>
+                    <td align="center"> test </td>
+                    <td align="center"> test </td>
+                    <td align="center"> test </td>
+                <tr>
+                    <td align="center"> 3 </td>
+                    <td align="center"> test </td>
+                    <td align="center"> test </td>
+                    <td align="center"> test </td>
+                </tr>
+                <tr>
+                    <td align="center"> 4 </td>
+                    <td align="center"> test </td>
+                    <td align="center"> test </td>
+                    <td align="center"> test </td>
+                </tr>
+                <tr>
+                    <td align="center"> 5 </td>
+                    <td align="center"> test </td>
+                    <td align="center"> test </td>
+                    <td align="center"> test </td>
+                </tr>
+                <tr>
+                    <td align="center"> 6 </td>
+                    <td align="center"> test </td>
+                    <td align="center"> test </td>
+                    <td align="center"> test </td>
+                </tr>
+                <tr>
+                    <td align="center"> 7 </td>
+                    <td align="center"> test </td>
+                    <td align="center"> test </td>
+                    <td align="center"> test </td>
+                </tr>
+                <tr>
+                    <td align="center"> 8 </td>
+                    <td align="center"> test </td>
+                    <td align="center"> test </td>
+                    <td align="center"> test </td>
+                </tr>
+            </tbody>
+        </table>
     </div>
-</div>
+
+    <!-------------------------------- TRIGGER/OPEN MODAL ---------------------------------->
+
+    <div id="myModal" class="modal">

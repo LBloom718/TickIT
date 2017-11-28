@@ -1,13 +1,18 @@
 ﻿using System;
+using System.Runtime.Serialization;
 
+[DataContract]
 public class Ticket
 {
-    public string FirstName { get; set; }
-    public string LastName { get; set; }
-    public string Email { get; set; }
+    [DataMember]
+    public int TicketID { get; set; }
+    [DataMember]
     public DateTime Date { get; set; }
+    [DataMember]
     public string Description { get; set; }
+    [DataMember]
     public Status status { get; set; }
+    [DataMember]
     public Type type { get; set; }
 }
 

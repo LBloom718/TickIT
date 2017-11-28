@@ -1,11 +1,14 @@
 ﻿using System;
 using System.Runtime.Serialization;
+using TickIT.Models;
 
 [DataContract]
 public class Ticket
 {
     [DataMember]
     public int TicketID { get; set; }
+    [DataMember]
+    public int UserID { get; set; }
     [DataMember]
     public DateTime Date { get; set; }
     [DataMember]
@@ -14,6 +17,10 @@ public class Ticket
     public Status status { get; set; }
     [DataMember]
     public Type type { get; set; }
+
+
+    public virtual User User { get; set; }
+
 }
 
 public enum Status

@@ -311,11 +311,11 @@ html {
 }
 
 body {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 14px;
-  line-height: 1.428571429;
-  color: #333333;
-  background-color: #ffffff;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.428571429;
+    color: papayawhip;
+    background-color: papayawhip;
 }
 
 input,
@@ -366,16 +366,16 @@ img {
 }
 
 .img-thumbnail {
-  display: inline-block;
-  height: auto;
-  max-width: 100%;
-  padding: 4px;
-  line-height: 1.428571429;
-  background-color: #ffffff;
-  border: 1px solid #dddddd;
-  border-radius: 4px;
-  -webkit-transition: all 0.2s ease-in-out;
-          transition: all 0.2s ease-in-out;
+    display: inline-block;
+    height: auto;
+    max-width: 100%;
+    padding: 4px;
+    line-height: 1.428571429;
+    background-color: papayawhip;
+    border: 1px solid #636CF1;
+    border-radius: 4px;
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
 }
 
 .img-circle {
@@ -446,7 +446,7 @@ cite {
 }
 
 .text-info {
-  color: #3a87ad;
+    color: #060241;
 }
 
 .text-left {

@@ -22,6 +22,16 @@ namespace TickIT.Controllers
 
             };
             tickets.Add(ticket1);
+            var ticket2 = new Ticket
+            {
+                Date = DateTime.Now,
+                Description = "Stuck.",
+                Status = Status.OPEN,
+                Area = Area.HARDWARE
+
+
+            };
+            tickets.Add(ticket2);
             return View(tickets);
 
 

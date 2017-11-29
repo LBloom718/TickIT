@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@model IEnumerable<Ticket>
+<!DOCTYPE html>
 <html xmlns= http://www.w3.org/1999/xhtml>
 <head runat = "server">
     <meta charset="UTF-8">
@@ -140,6 +141,15 @@ cursor:pointer;
 <button id="myBtn" style="background-color:green; hover: rgb(102, 255, 102); float:right; font-size: 40px">+</button>
 <div style="background-color:rgb(85,85,255);color:white;padding:150px;">
 <!--_____________________  LARGE NUMBER BOXES  _________________________ --> 
+   
+
+
+
+
+
+
+
+
 <table id = "spacedTable">  
 
   <tr>
@@ -189,7 +199,20 @@ cursor:pointer;
   </tr>
 </div> 
 </table>
+ 
+
 </div>
+    <table>
+        <tr><th>Description</th></tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+            </tr>
+        }
+    </table>
    
 
     <br>

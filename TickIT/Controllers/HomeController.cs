@@ -11,7 +11,30 @@ namespace TickIT.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            var tickets = new List<Ticket>();
+            var ticket1 = new Ticket
+            {
+                Date = DateTime.Now,
+                Description  = "My computer wont turn on.",
+                Status = Status.OPEN,
+                Area = Area.HARDWARE 
+      
+
+            };
+            tickets.Add(ticket1);
+            var ticket2 = new Ticket
+            {
+                Date = DateTime.Now,
+                Description = "Stuck.",
+                Status = Status.OPEN,
+                Area = Area.HARDWARE
+
+
+            };
+            tickets.Add(ticket2);
+            return View(tickets);
+
+
         }
 
         public ActionResult About()
